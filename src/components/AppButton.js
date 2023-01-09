@@ -7,19 +7,22 @@ import {
   Image,
 } from 'react-native';
 import colors from '../constants/colors';
-const AppButton = ({title, style, onPress, loading, titleStyle}) => (
-  <TouchableOpacity
-    disabled={loading}
-    onPress={onPress}
-    activeOpacity={0.8}
-    style={[styles.container, style]}>
-    {loading ? (
-      <ActivityIndicator color={colors.white} size="small" />
-    ) : (
-      <Text style={[styles.text, titleStyle]}>{title}</Text>
-    )}
-  </TouchableOpacity>
-);
+const AppButton = props => {
+  const {title, style, onPress, loading, titleStyle} = props;
+  return (
+    <TouchableOpacity
+      disabled={props.loading}
+      onPress={props.onPress}
+      activeOpacity={0.8}
+      style={[styles.container, style]}>
+      {props.loading ? (
+        <ActivityIndicator color={colors.white} size="small" />
+      ) : (
+        <Text style={[styles.text, titleStyle]}>{props.title}</Text>
+      )}
+    </TouchableOpacity>
+  );
+};
 export default AppButton;
 
 const styles = StyleSheet.create({

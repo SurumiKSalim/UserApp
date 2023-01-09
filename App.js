@@ -27,7 +27,7 @@ import {
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {Provider} from 'react-redux';
-import store from './src/store/store';
+import store from './src/redux/store';
 import LoginScreen from './src/features/authentication/login/login';
 import SignUpScreen from './src/features/authentication/signUp/register';
 import UserScreen from './src/features/users/screens/userScreen';

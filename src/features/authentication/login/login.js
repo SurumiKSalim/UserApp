@@ -15,10 +15,9 @@ import {useNavigation} from '@react-navigation/native';
 import colors from '../../../constants/colors';
 import {baseUrl} from '../../../constants/urls';
 import {CommonPost} from '../../../services/services';
-import {Login, userSelector} from '../../../store/reducers/authSlice';
+import {Login, userSelector} from '../../../redux/reducers/authSlice';
 import {useDispatch, useSelector} from 'react-redux';
-import {addToken} from '../../../store/reducers/authSlice';
-import {clearState} from '../../../store/reducers/authSlice';
+import {clearState} from '../../../redux/reducers/authSlice';
 const LoginScreen = () => {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
@@ -49,7 +48,6 @@ const LoginScreen = () => {
       password: password,
     };
     dispatch(Login(body));
-   
   };
   return (
     <View style={style.container}>

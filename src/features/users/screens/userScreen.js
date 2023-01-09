@@ -13,11 +13,11 @@ import {
 import UserCard from '../userCard';
 import {useNavigation} from '@react-navigation/native';
 import {useDispatch, useSelector} from 'react-redux';
-import {fetchUsers} from '../../../store/reducers/getUserSlice';
+import {fetchUsers} from '../../../redux/reducers/getUserSlice';
 import {baseUrl} from '../../../constants/urls';
 import {CommonGet} from '../../../services/services';
 import AppButton from '../../../components/AppButton';
-import {addToken, clearState, logout} from '../../../store/reducers/authSlice';
+import {clearState, logout} from '../../../redux/reducers/authSlice';
 const UserScreen = () => {
   const dispatch = useDispatch();
   const navigation = useNavigation();

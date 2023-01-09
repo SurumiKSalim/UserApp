@@ -9,13 +9,8 @@ import {
 } from 'react-native';
 import colors from '../constants/colors';
 import {useIsFocused} from '@react-navigation/native';
-const TextInputComponent = ({
-  source,
-  placeholder,
-  changeText,
-  password,
-  forgot,
-}) => {
+const TextInputComponent = (props) => {
+  const {source, placeholder, changeText, password, forgot} = props;
   const input = useRef(null);
   const focused = useIsFocused();
   useEffect(() => {
@@ -23,15 +18,15 @@ const TextInputComponent = ({
   }, [focused]);
   return (
     <View style={style.inputSection}>
-      <Image source={source} style={style.image} resizeMode="contain" />
+      <Image source={props.source} style={style.image} resizeMode="contain" />
       <TextInput
         ref={input}
         style={[style.inputStyle]}
-        placeholder={placeholder}
-        onChangeText={changeText}
-        secureTextEntry={password}
+        placeholder={props.placeholder}
+        onChangeText={props.changeText}
+        secureTextEntry={props.password}
       />
-      {forgot ? (
+      {props.forgot ? (
         <TouchableOpacity style={style.button}>
           <Text style={style.buttonText}>Forgot?</Text>
         </TouchableOpacity>
